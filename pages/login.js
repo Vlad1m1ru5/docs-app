@@ -1,21 +1,19 @@
+import AppHead from "@components/app-head";
+import AppLink from "@components/app-link";
 import Container from "@components/container";
 import Page from "@components/page";
-import Head from "next/head";
 
 export default function Login() {
   return (
     <Page>
-      <Head>
-        <title>Docs App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <AppHead />
       <header className="py-4 bg-white">
         <Container>
           <div className="flex flex-wrap items-center justify-between">
             <h1 className="text-4xl font-bold">
-              <a href="/" className="outline-none focus:underline">
+              <AppLink href="/" className="outline-none focus:underline">
                 Docs App
-              </a>
+              </AppLink>
             </h1>
           </div>
         </Container>
@@ -30,7 +28,8 @@ export default function Login() {
             >
               <h2 className="text-2xl font-bold">Enter user data</h2>
               <label>
-                Email <br />
+                Email
+                <br />
                 <input
                   type="email"
                   name="email"
@@ -41,7 +40,8 @@ export default function Login() {
                 />
               </label>
               <label>
-                Password <br />
+                Password
+                <br />
                 <input
                   type="password"
                   name="password"
@@ -67,14 +67,14 @@ export default function Login() {
           <div className="flex flex-wrap justify-around">
             <span className="text-2xl">
               Welcome to{" "}
-              <a
+              <AppLink
                 href="https://nextjs.org"
                 className="outline-none focus:underline"
               >
                 Next.js!
-              </a>
+              </AppLink>
             </span>
-            <a
+            <AppLink
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export default function Login() {
             >
               Powered by{" "}
               <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-            </a>
+            </AppLink>
           </div>
         </Container>
       </footer>

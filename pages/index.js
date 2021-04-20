@@ -1,21 +1,19 @@
+import AppHead from "@components/app-head";
+import AppLink from "@components/app-link";
 import Container from "@components/container";
 import Page from "@components/page";
-import Head from "next/head";
 
 export default function Home() {
   return (
     <Page>
-      <Head>
-        <title>Docs App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <AppHead />
       <header className="py-4 bg-white">
         <Container>
           <div className="flex flex-wrap items-center justify-between">
             <h1 className="text-4xl font-bold">
-              <a href="/" className="outline-none focus:underline">
+              <AppLink href="/" className="outline-none focus:underline">
                 Docs App
-              </a>
+              </AppLink>
             </h1>
             <form action="/login">
               <button
@@ -47,12 +45,12 @@ export default function Home() {
                 Search
               </button>
             </form>
-            <a
+            <AppLink
               href="/upload"
               className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
             >
               Add Document
-            </a>
+            </AppLink>
           </div>
         </Container>
       </main>
@@ -62,14 +60,14 @@ export default function Home() {
           <div className="flex flex-wrap justify-around">
             <span className="text-2xl">
               Welcome to{" "}
-              <a
+              <AppLink
                 href="https://nextjs.org"
                 className="outline-none focus:underline"
               >
                 Next.js!
-              </a>
+              </AppLink>
             </span>
-            <a
+            <AppLink
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
@@ -77,7 +75,7 @@ export default function Home() {
             >
               Powered by{" "}
               <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-            </a>
+            </AppLink>
           </div>
         </Container>
       </footer>
