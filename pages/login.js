@@ -2,7 +2,7 @@ import Container from "@components/container";
 import Page from "@components/page";
 import Head from "next/head";
 
-export default function Home() {
+export default function Login() {
   return (
     <Page>
       <Head>
@@ -17,42 +17,47 @@ export default function Home() {
                 Docs App
               </a>
             </h1>
-            <form action="/login">
-              <button
-                type="submit"
-                className="ml-2 px-2 py-2 text-lg bg-green-400 text-white rounded outline-none focus:bg-green-700"
-              >
-                Login
-              </button>
-            </form>
           </div>
         </Container>
       </header>
       <hr />
       <main className="flex-1">
         <Container>
-          <div className="flex flex-col items-center space-y-2 mt-8">
-            <form action="" className="flex flex-row w-full">
-              <input
-                type="search"
-                placeholder="Search the Docs"
-                aria-labelledby="search-button"
-                className="px-2 py-2 w-full bg-gray-100 rounded outline-none focus:border focus:border-blue-700 focus:-m-px"
-              />
+          <div className="flex flex-col items-center mt-8">
+            <form
+              action=""
+              className="flex flex-col space-y-2 p-4 rounded bg-white"
+            >
+              <h2 className="text-2xl font-bold">Enter user data</h2>
+              <label>
+                Email <br />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                  className="px-2 py-2 w-full bg-gray-100 rounded outline-none focus:border focus:border-blue-700 focus:-m-px"
+                />
+              </label>
+              <label>
+                Password <br />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter password"
+                  required
+                  className="px-2 py-2 w-full bg-gray-100 rounded outline-none focus:border focus:border-blue-700 focus:-m-px"
+                />
+              </label>
               <button
                 type="submit"
-                id="search-button"
-                className="ml-2 px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
+                className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
               >
-                Search
+                Login
               </button>
             </form>
-            <a
-              href="/upload"
-              className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
-            >
-              Add Document
-            </a>
           </div>
         </Container>
       </main>
