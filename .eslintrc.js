@@ -22,7 +22,14 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    indent: ["error", 2],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        components: ["Link"],
+        specialLink: ["hrefLeft", "hrefRight"],
+        aspects: ["noHref", "invalidHref", "preferButton"],
+      },
+    ],
     "linebreak-style": ["error", "unix"],
     "max-len": ["error", { ignoreStrings: true }],
     quotes: ["error", "double"],

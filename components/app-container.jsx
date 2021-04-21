@@ -1,3 +1,3 @@
-export default function Container({ children }) {
+export default function AppContainer({ children }) {
   return <div className="container ml-auto mr-auto">{children}</div>;
 }
