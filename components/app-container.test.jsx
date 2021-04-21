@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import Container from "./container";
+import AppContainer from "./app-container";
 
 describe("Container", function () {
   it("should be in the document", function () {
     const caption = "Test container";
-    render(<Container>{caption}</Container>);
+    render(<AppContainer>{caption}</AppContainer>);
 
     const containerElement = screen.getByText(caption);
 

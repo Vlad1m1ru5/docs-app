@@ -1,14 +1,14 @@
 import AppHead from "@components/app-head";
 import AppLink from "@components/app-link";
-import Container from "@components/container";
-import Page from "@components/page";
+import AppContainer from "@components/app-container";
+import AppPage from "@components/app-page";
 
 export default function Home() {
   return (
-    <Page>
+    <AppPage>
       <AppHead />
       <header className="py-4 bg-white">
-        <Container>
+        <AppContainer>
           <div className="flex flex-wrap items-center justify-between">
             <h1 className="text-4xl font-bold">
               <AppLink href="/" className="outline-none focus:underline">
@@ -24,11 +24,11 @@ export default function Home() {
               </button>
             </form>
           </div>
-        </Container>
+        </AppContainer>
       </header>
       <hr />
       <main className="flex-1">
-        <Container>
+        <AppContainer>
           <div className="flex flex-col items-center space-y-2 mt-8">
             <form action="" className="flex flex-row w-full">
               <input
@@ -52,11 +52,11 @@ export default function Home() {
               Add Document
             </AppLink>
           </div>
-        </Container>
+        </AppContainer>
       </main>
       <hr />
       <footer className="py-4 bg-white">
-        <Container>
+        <AppContainer>
           <div className="flex flex-wrap justify-around">
             <span className="text-2xl">
               Welcome to{" "}
@@ -77,8 +77,8 @@ export default function Home() {
               <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
             </AppLink>
           </div>
-        </Container>
+        </AppContainer>
       </footer>
-    </Page>
+    </AppPage>
   );
 }
