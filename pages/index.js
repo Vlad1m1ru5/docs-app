@@ -1,6 +1,7 @@
-import AppHead from "@components/app-head";
-import AppLink from "@components/app-link";
 import AppContainer from "@components/app-container";
+import AppHead from "@components/app-head";
+import AppInput from "@components/app-input";
+import AppLink from "@components/app-link";
 import AppPage from "@components/app-page";
 
 export default function Home() {
@@ -31,11 +32,11 @@ export default function Home() {
         <AppContainer>
           <div className="flex flex-col items-center space-y-2 mt-8">
             <form action="" className="flex flex-row w-full">
-              <input
+              <AppInput
                 type="search"
+                name="search"
                 placeholder="Search the Docs"
-                aria-labelledby="search-button"
-                className="px-2 py-2 w-full bg-gray-100 rounded outline-none focus:border focus:border-blue-700 focus:-m-px"
+                ariaLabelledby="search-button"
               />
               <button
                 type="submit"

@@ -22,7 +22,6 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    indent: ["error", 2],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
