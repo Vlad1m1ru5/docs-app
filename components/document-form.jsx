@@ -1,6 +1,8 @@
 import { useRef } from "react";
+import AppButton from "./app-button";
+import AppHeading from "./app-heading";
 
-export default function DocumentForm() {
+export default function DocumentForm({ onFormSubmit }) {
   const fileInput = useRef();
 
   const handleOnUploadClick = (event) => {
@@ -8,8 +10,10 @@ export default function DocumentForm() {
     fileInput.current.click();
   };
 
-  const handleOnUploadSubmit = (event) => {
-    event.target.file.files;
+  const handleOnFormSubmit = (event) => {
+    event.preventDefault();
+    const body = new FormData(event.target);
+    onFormSubmit(body);
   };
 
   return (
@@ -18,16 +22,12 @@ export default function DocumentForm() {
       className="flex flex-col space-y-2 p-4 rounded bg-white"
       method="POST"
       encType="multipart/form-data"
-      onSubmit={handleOnUploadSubmit}
+      onSubmit={handleOnFormSubmit}
     >
-      <h2 className="text-2xl font-bold">Upload Document File</h2>
-      <button
-        type="submit"
-        className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
-        onClick={handleOnUploadClick}
-      >
+      <AppHeading>Upload Document File</AppHeading>
+      <AppButton type="button" onClick={handleOnUploadClick}>
         Upload
-      </button>
+      </AppButton>
       <input
         type="file"
         name="file"
@@ -38,12 +38,7 @@ export default function DocumentForm() {
         tabIndex={-1}
         accept=".md"
       />
-      <button
-        type="submit"
-        className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
-      >
-        Submit
-      </button>
+      <AppButton type="submit">Submit</AppButton>
     </form>
   );
 }
