@@ -2,6 +2,7 @@ import AppContainer from "@components/app-container";
 import AppHead from "@components/app-head";
 import AppInput from "@components/app-input";
 import AppLink from "@components/app-link";
+import AppMain from "@components/app-main";
 import AppPage from "@components/app-page";
 
 export default function Home() {
@@ -28,10 +29,10 @@ export default function Home() {
         </AppContainer>
       </header>
       <hr />
-      <main className="flex-1">
+      <AppMain>
         <AppContainer>
           <div className="flex flex-col items-center space-y-2 mt-8">
-            <form action="" className="flex flex-row w-full">
+            <form action="" className="flex flex-row w-full space-x-2">
               <AppInput
                 type="search"
                 name="search"
@@ -41,7 +42,7 @@ export default function Home() {
               <button
                 type="submit"
                 id="search-button"
-                className="ml-2 px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
+                className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
               >
                 Search
               </button>
@@ -54,7 +55,7 @@ export default function Home() {
             </AppLink>
           </div>
         </AppContainer>
-      </main>
+      </AppMain>
       <hr />
       <footer className="py-4 bg-white">
         <AppContainer>

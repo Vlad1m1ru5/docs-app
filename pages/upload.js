@@ -1,11 +1,11 @@
 import AppContainer from "@components/app-container";
 import AppHead from "@components/app-head";
-import AppInput from "@components/app-input";
 import AppLink from "@components/app-link";
 import AppMain from "@components/app-main";
 import AppPage from "@components/app-page";
+import DocumentForm from "@components/document-form";
 
-export default function Login() {
+export default function Upload() {
   return (
     <AppPage>
       <AppHead />
@@ -17,41 +17,22 @@ export default function Login() {
                 Docs App
               </AppLink>
             </h1>
+            <form action="/login">
+              <button
+                type="submit"
+                className="ml-2 px-2 py-2 text-lg bg-green-400 text-white rounded outline-none focus:bg-green-700"
+              >
+                Login
+              </button>
+            </form>
           </div>
         </AppContainer>
       </header>
       <hr />
       <AppMain>
         <AppContainer>
-          <div className="flex flex-col items-center mt-8">
-            <form
-              action=""
-              className="flex flex-col space-y-2 p-4 rounded bg-white"
-            >
-              <h2 className="text-2xl font-bold">Enter user data</h2>
-              <label htmlFor="email">Email</label>
-              <AppInput
-                type="email"
-                name="email"
-                placeholder="Enter email"
-                id="email"
-                isRequired={true}
-              />
-              <label htmlFor="password">Password</label>
-              <AppInput
-                type="password"
-                name="password"
-                placeholder="Enter password"
-                id="password"
-                idRequired={true}
-              />
-              <button
-                type="submit"
-                className="px-2 py-2 text-lg bg-blue-400 text-white rounded outline-none focus:bg-blue-700"
-              >
-                Login
-              </button>
-            </form>
+          <div className="flex flex-col items-center space-y-2 mt-8">
+            <DocumentForm />
           </div>
         </AppContainer>
       </AppMain>
