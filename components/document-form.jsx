@@ -35,6 +35,7 @@ export default function DocumentForm() {
         required
         ref={fileInput}
         className="h-0 w-0 opacity-0"
+        tabIndex={-1}
         accept=".md"
       />
       <button
