@@ -6,11 +6,14 @@ export default function AppInput({
   isRequired,
   ariaLabelledby,
 }) {
-  const inputProps = { type, name, placeholder };
-
-  id && (inputProps.id = id);
-  isRequired && (inputProps.required = isRequired);
-  ariaLabelledby && (inputProps["aria-labelledby"] = ariaLabelledby);
+  const inputProps = {
+    type,
+    name,
+    ...(id && { id }),
+    ...(placeholder && { placeholder }),
+    ...(isRequired && { required: isRequired }),
+    ...(ariaLabelledby && { "aria-labelledby": ariaLabelledby }),
+  };
 
   return (
     <input
