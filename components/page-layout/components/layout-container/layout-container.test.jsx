@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import AppPage from "./app-page";
+import LayoutContainer from "./layout-container";
 
 describe("Page", function () {
   function getHeight(element) {
@@ -8,7 +8,7 @@ describe("Page", function () {
 
   it("should be viewport height", function () {
     const caption = "Page content";
-    render(<AppPage>{caption}</AppPage>);
+    render(<LayoutContainer>{caption}</LayoutContainer>);
     const pageElement = screen.getByText(caption);
 
     const pageHeight = getHeight(pageElement);

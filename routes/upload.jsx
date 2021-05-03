@@ -1,5 +1,5 @@
-import AppLayout from "@components/app-layout";
-import DocumentForm from "@components/document-form";
+import PageLayout from "@components/page-layout";
+import FileForm from "@components/file-form";
 
 export default function Upload() {
   const handleOnFormSubmit = async (body) => {
@@ -10,8 +10,8 @@ export default function Upload() {
   };
 
   return (
-    <AppLayout>
-      <DocumentForm onFormSubmit={handleOnFormSubmit} />
-    </AppLayout>
+    <PageLayout>
+      <FileForm onFormSubmit={handleOnFormSubmit} />
+    </PageLayout>
   );
 }

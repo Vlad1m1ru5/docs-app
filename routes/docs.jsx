@@ -1,5 +1,5 @@
 import AppHeading from "@components/app-heading";
-import AppLayout from "@components/app-layout";
+import PageLayout from "@components/page-layout";
 import { useEffect, useState } from "react";
 
 export default function Docs({ search }) {
@@ -17,7 +17,7 @@ export default function Docs({ search }) {
   }, [search]);
 
   return (
-    <AppLayout>
+    <PageLayout>
       <AppHeading>Документы по запросу: {search}</AppHeading>
       {(state.isLoading && <div>Loading...</div>) || (
         <ul>
@@ -26,6 +26,6 @@ export default function Docs({ search }) {
           ))}
         </ul>
       )}
-    </AppLayout>
+    </PageLayout>
   );
 }

@@ -1,11 +1,11 @@
 import AppButton from "@components/app-button";
 import AppHeading from "@components/app-heading";
 import AppInput from "@components/app-input";
-import AppLayout from "@components/app-layout";
+import PageLayout from "@components/page-layout";
 
 export default function Login() {
   return (
-    <AppLayout>
+    <PageLayout>
       <form action="" className="flex flex-col space-y-2 p-4 rounded bg-white">
         <AppHeading>Enter user data</AppHeading>
         <label htmlFor="email">Email</label>
@@ -26,6 +26,6 @@ export default function Login() {
         />
         <AppButton type="submit">Login</AppButton>
       </form>
-    </AppLayout>
+    </PageLayout>
   );
 }
