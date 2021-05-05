@@ -1,12 +1,12 @@
-import FormContaoiner from "./components/form-container";
+import FormContainer from "./components/form-container";
 import FormInput from "./components/form-input";
 import FormSubmit from "./components/form-submit";
 
 export default function SearchForm({ action }) {
   return (
-    <FormContaoiner action={action}>
+    <FormContainer action={action}>
       <FormInput />
       <FormSubmit />
-    </FormContaoiner>
+    </FormContainer>
   );
 }
