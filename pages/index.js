@@ -1,6 +1,6 @@
 import routes from "@routes/index";
+import React from "react";
 
 export default function Home() {
-  const HomeComponent = routes.home.component;
-  return <HomeComponent />;
+  return React.createElement(routes.home.component);
 }

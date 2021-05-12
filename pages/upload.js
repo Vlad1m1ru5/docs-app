@@ -1,6 +1,6 @@
 import routes from "@routes/index";
+import React from "react";
 
 export default function Upload() {
-  const UploadComponent = routes.upload.component;
-  return <UploadComponent />;
+  return React.createElement(routes.upload.component);
 }
