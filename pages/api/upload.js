@@ -1,10 +1,5 @@
 import pool from "@database/pool";
-import {
-  BEGIN,
-  COMMIT,
-  INSERT_DISTRIBUTION,
-  INSERT_DOCUMENTATION,
-} from "@database/query";
+import SQL from "@database/sql";
 import { IncomingForm } from "formidable";
 import fs from "fs";
 import matter from "gray-matter";
@@ -46,13 +41,13 @@ export default async function (req, res) {
         return res.status(500).json({ message: err.message });
       }
 
-      client.query(BEGIN, (err) => {
+      client.query(SQL.BEGIN, (err) => {
         if (shouldAbort(err)) {
           return res.status(500).json({ message: err.message });
         }
 
         client.query(
-          INSERT_DISTRIBUTION,
+          SQL.INSERT_DISTRIBUTION,
           [groupId, artifactId, version],
           (err) => {
             if (shouldAbort(err)) {
@@ -60,14 +55,14 @@ export default async function (req, res) {
             }
 
             client.query(
-              INSERT_DOCUMENTATION,
+              SQL.INSERT_DOCUMENTATION,
               [name, groupId, artifactId, version, content],
               (err) => {
                 if (shouldAbort(err)) {
                   return res.status(500).json({ message: err.message });
                 }
 
-                client.query(COMMIT, (err) => {
+                client.query(SQL.COMMIT, (err) => {
                   if (err) {
                     console.log("Error commiting transaction", err.stack);
                     res.status(500).json({ message: err.message });

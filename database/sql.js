@@ -1,8 +1,8 @@
-export const BEGIN = "BEGIN";
+const BEGIN = "BEGIN";
 
-export const COMMIT = "COMMIT";
+const COMMIT = "COMMIT";
 
-export const INSERT_DISTRIBUTION = `
+const INSERT_DISTRIBUTION = `
 WITH DistributionGroupEntry AS
       (INSERT INTO DistributionGroup AS dg (Value) VALUES ($1)
         ON CONFLICT (Value) DO UPDATE SET Value = dg.Value
@@ -56,3 +56,11 @@ INNER JOIN DistributionArtifact ON DistributionArtifact.Id = Distribution.Distri
 INNER JOIN DistributionVersion ON DistributionVersion.Id = Distribution.DistributionVersionId
 WHERE Document ==> $1;
 `;
+
+export default {
+  BEGIN,
+  COMMIT,
+  INSERT_DISTRIBUTION,
+  INSERT_DOCUMENT,
+  SELECT_DOCUMENT,
+};

@@ -1,8 +1,8 @@
 import pool from "@database/pool";
-import { SELECT_DOCUMENT } from "@database/query";
+import SQL from "@database/sql";
 
 export default async function handle(req, res) {
-  pool.query(SELECT_DOCUMENT, [req.body.search], (err, result) => {
+  pool.query(SQL.SELECT_DOCUMENT, [req.body.search], (err, result) => {
     if (err) {
       console.log("Error in query", err.stack);
       return res.status(500).json({ docs: [], message: err.message });
