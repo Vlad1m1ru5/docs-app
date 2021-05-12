@@ -1,7 +1,7 @@
-import Home from "./home";
-import Login from "./login";
-import Docs from "./docs";
-import Upload from "./upload";
+import Home from "./Home";
+import Login from "./Login";
+import Docs from "./Docs";
+import Upload from "./Upload";
 
 const routes = {
   home: {
