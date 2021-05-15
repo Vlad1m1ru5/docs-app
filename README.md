@@ -23,8 +23,8 @@ Second, configure databases:
 * enter user `su - postgres`
 * enter postgres cli `psql`
 * create user password `\password postgres`
-* create new user `CREATE USER markus WITH PASSWORD 'markus';`
-* create new databse `CREATE DATABASE application OWNER markus;`
+* create new user `CREATE USER marcus WITH PASSWORD 'marcus';`
+* create new databse `CREATE DATABASE application OWNER marcus;`
 * exit `\quit`
 * execute database createion SQL script `sudo psql -U marcus -d application -a -f migration.sql`
 
