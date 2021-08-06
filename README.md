@@ -10,6 +10,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 * [ZomboDB 3000.0.0-alpha3](https://www.zombodb.com/services/) added to postgres extensions
 * MacOS, Windows (including WSL), and Linux are supported
 
+> Notes
+>
+> If building `zombodb` from sources consider the following:
+>
+> 1. Preinstalled `clang` is required.
+> 2. The user that builds sources will need write permissions to the Postgres `$PG_INSTALL_PATH/lib/postgresql` and `$PG_INSTALL_PATH/share/postgresql/extension` directories.
+> 3. If `zombodb` extension creation fails, add it manually with Postgres super user.
+
 ## Installation
 
 First, install project:
@@ -28,8 +36,6 @@ Second, configure databases:
 * exit `\quit`
 * execute database createion SQL script `sudo psql -U marcus -d application -a -f migration.sql`
 
-> Note: The user that runs the above command will need write permissions to the Postgres `$PG_INSTALL_PATH/lib/postgresql/` and `$PG_INSTALL_PATH/share/postgresql/extension/` directories.
-
 Third, install dependencis:
 
 ```bash
@@ -40,7 +46,7 @@ yarn install
 
 ## Configuration
 
-Create file `.env.development`:
+Create file `.env.development.local`:
 
 ```bash
 DB_HOST=127.0.0.1

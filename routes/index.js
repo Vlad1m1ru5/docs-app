@@ -2,25 +2,26 @@ import Home from "./home";
 import Login from "./login";
 import Docs from "./docs";
 import Upload from "./upload";
+import Document from "./document";
 
 const routes = {
   home: {
-    name: "Home",
     component: Home,
     path: "/",
   },
   login: {
-    name: "Login",
     component: Login,
     path: "/login",
   },
   docs: {
-    name: "Documents",
     component: Docs,
     path: "/docs",
   },
+  document: {
+    component: Document,
+    path: "/docs/:slug",
+  },
   upload: {
-    name: "Upload",
     component: Upload,
     path: "/upload",
   },
