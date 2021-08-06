@@ -1,6 +1,12 @@
-import routes from "@routes/index";
+import FileForm from "@components/file-form";
 
 export default function Upload() {
-  const UploadComponent = routes.upload.component;
-  return <UploadComponent />;
+  const handleOnFormSubmit = async (body) => {
+    const options = { method: "POST", body };
+    const response = await fetch("/api/upload", options);
+    const data = await response.json();
+    alert(data.message); //TODO: show toast with message
+  };
+
+  return <FileForm onFormSubmit={handleOnFormSubmit} />;
 }
