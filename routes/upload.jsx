@@ -1,4 +1,3 @@
-import PageLayout from "@components/page-layout";
 import FileForm from "@components/file-form";
 
 export default function Upload() {
@@ -9,9 +8,5 @@ export default function Upload() {
     alert(data.message); //TODO: show toast with message
   };
 
-  return (
-    <PageLayout>
-      <FileForm onFormSubmit={handleOnFormSubmit} />
-    </PageLayout>
-  );
+  return <FileForm onFormSubmit={handleOnFormSubmit} />;
 }

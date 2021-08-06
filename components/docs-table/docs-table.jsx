@@ -1,8 +1,12 @@
+import AppHeading from "@components/app-heading";
 import AppLink from "@components/app-link";
 
-export default function DocsTable({ rows, cols }) {
+export default function DocsTable({ caption, rows, cols }) {
   return (
     <table className="w-full table-fixed">
+      <caption>
+        <AppHeading>{caption}</AppHeading>
+      </caption>
       <thead>
         <tr>
           {cols.map((key, index) => (

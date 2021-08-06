@@ -1,7 +1,7 @@
+import AppLoader from "@components/app-loader";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGFM from "remark-gfm";
-import PageLayout from "@components/page-layout";
-import { useEffect, useState } from "react";
 
 const INITIAL_STATE = {
   content: "",
@@ -26,10 +26,10 @@ export default function Document({ groupId, artifactId, version, name }) {
   }, [groupId, artifactId, version, name]);
 
   return (
-    <PageLayout>
+    <AppLoader isLoading={state.isLoading} error={state.message}>
       <ReactMarkdown className="prose" plugins={state.plugins}>
-        {state.isLoading ? "Loading..." : state.content}
+        {state.content}
       </ReactMarkdown>
-    </PageLayout>
+    </AppLoader>
   );
 }

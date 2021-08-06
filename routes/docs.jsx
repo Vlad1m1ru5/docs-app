@@ -1,11 +1,10 @@
-import AppHeading from "@components/app-heading";
+import AppLoader from "@components/app-loader";
 import DocsTable from "@components/docs-table";
-import PageLayout from "@components/page-layout";
 import { useEffect, useState } from "react";
 
 const DOCS_KEYS = ["Name", "Group", "Artifact", "Version"];
 
-const INITIAL_STATE = { docs: [], message: "", isLoading: false };
+const INITIAL_STATE = { docs: [], message: "", isLoading: true };
 
 export default function Docs({ search }) {
   const [state, setState] = useState(INITIAL_STATE);
@@ -37,12 +36,12 @@ export default function Docs({ search }) {
   }
 
   return (
-    <PageLayout>
-      <AppHeading>Search results</AppHeading>
-      {(state.isLoading && <div>Loading...</div>) ||
-        (state.message.length > 0 && <p>{state.message}</p>) || (
-          <DocsTable rows={state.docs.map(docToRow)} cols={DOCS_KEYS} />
-        )}
-    </PageLayout>
+    <AppLoader isLoading={state.isLoading} error={state.message}>
+      <DocsTable
+        caption="Search results"
+        rows={state.docs.map(docToRow)}
+        cols={DOCS_KEYS}
+      />
+    </AppLoader>
   );
 }

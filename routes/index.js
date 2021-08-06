@@ -19,7 +19,7 @@ const routes = {
   },
   document: {
     component: Document,
-    path: "/docs/:slug",
+    path: "/docs/:groupId/:version/:artifactId/:name",
   },
   upload: {
     component: Upload,
