@@ -64,3 +64,18 @@ INNER JOIN DistributionArtifact ON DistributionArtifact.Id = Distribution.Distri
 INNER JOIN DistributionVersion ON DistributionVersion.Id = Distribution.DistributionVersionId
 WHERE Document ==> $1;
 `;
+
+export const selectFirstDocumentContent = `
+SELECT Document.Content
+FROM Document
+INNER JOIN DocumentName ON DocumentName.Id = Document.DocumentNameId
+INNER JOIN Distribution ON Distribution.Id = Document.DistributionId
+INNER JOIN DistributionGroup ON DistributionGroup.Id = Distribution.DistributionGroupId
+INNER JOIN DistributionArtifact ON DistributionArtifact.Id = Distribution.DistributionArtifactId
+INNER JOIN DistributionVersion ON DistributionVersion.Id = Distribution.DistributionVersionId
+WHERE DistributionGroup.Value = $1
+AND DistributionArtifact.Value = $2
+AND DistributionVersion.Value = $3
+AND DocumentName.Value = $4
+LIMIT 1;
+`;
